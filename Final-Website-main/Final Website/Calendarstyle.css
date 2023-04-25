@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+body {
+	position: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #E4E6E1;
+  overflow-x: hidden
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #E4E6E1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 190px;
+  height: 82px; /* Decrease the height to fit within the header */
+  margin-left: 10px; /* Add a left margin to push the logo away from the edge */
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Move the search bar to the right */
+  margin-right: 200px; /* Add some right margin for spacing */
+}
+
+.search input[type="text"] {
+  padding: 12px 85px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.search button.search-icon {
+  padding: 16px 20px;
+  background-color: #3B6978;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  margin-left: 8px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-right: 40px; /* Add some left margin for spacing */
+}
+
+.profile-pic img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 80px;
+  margin-right: 10px; /* Add some right margin for spacing */
+}
+
+.profile-info h2 {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  color: #3B6978;
+}
+
+.notification-btn,
+.settings-btn {
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-size: 24px;
+margin-right: 10px; /* Add some right margin for spacing */
+}
+
+.notification-btn:hover,
+.settings-btn:hover {
+color: #3B6978; /* Change font color on hover */
+}
+
+.notification-btn:focus,
+.settings-btn:focus {
+outline: none;
+}
+
+.notification-btn i,
+.settings-btn i {
+transition: all 0.3s ease;
+}
+
+.notification-btn:hover i,
+.settings-btn:hover i {
+transform: translateY(-3px); /* Add a smooth hover effect for the icon */
+}
+
+.notification-btn, .settings-btn {
+  display: inline-block;
+}
+         
+         main {
+            display: flex;
+            height: calc(100vh - 80px);
+         }
+
+aside {
+  width: 190px;
+  background-color: #3B6978;
+  padding: 20px;
+  border-radius: 0 20px 20px 0;
+  color: #E4E6E1; /* Change font color */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 10px 0 70px 0;;
+}
+
+.sidebar {
+width: 250px;
+background-color: #3B6978;
+padding: 20px;
+border-radius: 0 20px 20px 0;
+color: #E4E6E1; /* Change font color */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+}
+
+.sidebar ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.sidebar li {
+margin: 10px 0 70px 0;
+}
+
+.sidebar-item {
+font-size: 20px;
+display: flex;
+align-items: center;
+color: #E4E6E1;
+transition: all 0.3s ease;
+cursor: pointer;
+position: relative;
+}
+
+.sidebar-item:hover {
+background-color: #E4E6E1;
+color: #3B6978;
+border-radius: 60px;
+padding-left: 60px;
+padding-right: 10px;
+}
+
+.sidebar-item:hover i {
+transform: translateX(-5px);
+}
+
+.sidebar-item:hover a, .sidebar-item.active a {
+color: #3B6978;
+}
+
+.sidebar-item i {
+margin-right: 20px;
+transition: all 0.3s ease;
+}
+
+.sidebar-item a {
+color: #E4E6E1;
+text-decoration: none;
+}
+
+.sidebar-item a.active, .sidebar-item.active i {
+	border-radius: 50;
+background-color: #E4E6E1;
+color: #3B6978;
+border-radius: 60px;
+padding-left: 20px;
+padding-right: 30px;
+}
+
+.sidebar-item:hover:not(.active) {
+background-color: #3B6978;
+}
+
+.sidebar-item:hover:not(.active) a, .sidebar-item:hover:not(.active) i {
+color: #E4E6E1;
+}
+
+.logout {
+  position: absolute; /* Set position to absolute */
+  bottom: 0; /* Align to bottom of sidebar */
+  right: 0; /* Align to right side of sidebar */
+  margin: 20px; /* Add margin for spacing */
+}
+
+.logout a {
+  display: flex;
+  align-items: center;
+  color: #E4E6E1;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.logout a:hover {
+  color: #3B6978;
+}
+
+.logout a i {
+  margin-right: 10px;
+}
+
+.logout a .fa-sign-out {
+  /* Add custom styling for the logout icon */
+  font-size: 24px;
+  transform: rotate(180deg);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: -150px;
+}
+
+.ftco-section {
+  max-width: calc(100% - 100px);
+  margin-left: 100px;
+  margin-bottom: 500px;
+}

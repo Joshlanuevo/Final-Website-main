@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="loginstyle.css">
+    <title>Login Page</title>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            if (email === "admin@hci.com" && password === "letmein") {
+                window.location.href = "Main Page.html";
+            } else {
+                alert("Invalid email or password. Please try again.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="./Images/bg login.png" alt="background" class="bg-image">
+<div class="login-page">
+  <div class="logo-container">
+    <img src="./Images/logo.png" alt="logo" class="logo">
+  </div>
+  <div class="login-element">
+    <img src="./Images/login element.png" alt="element" class="element">
+  </div>
+  <div class="login-form">
+                <div class="header">
+                    <h1>Create Account</h1>
+                    <div class="login-links">
+                        <!-- icons -->
+                        <div class="login-icons">
+                            <a href="#" class="fa fa-google"></a>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-instagram"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                        </div>
+                        <p>or use your email for registration:</p>
+						<p> Sign in with this credentials: </p>
+						<p>Email: <b>admin@hci.com</b> Password: <b>letmein</b></p>
+                        <input type="text" name="" id="name" placeholder="Name">
+                        <input type="email" name="" id="email" placeholder="Email">
+                        <input type="password" name="" id="password" placeholder="Password">
+                        <label class="terms-label">
+                            <input type="checkbox" id="terms-checkbox" name="vehicle1" value="Bike">
+                            <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                        <button onclick="validateForm()">Sign Up</button>
+                        <button onclick="validateForm()">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

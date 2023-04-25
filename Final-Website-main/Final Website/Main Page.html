@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Barkadago - Dashboard</title>
+      <link rel="stylesheet" type="text/css" href="dashboardstyle.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+      <link rel="stylesheet" href="modal.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="modal.js"></script>
+   </head>
+   <body>
+      <header>
+         <div class="header">
+            <div class="logo">      
+               <img src="./Images/logo.png" alt="Logo">
+            </div>
+            <div class="profile">        
+               <div class="profile-pic">
+                  <img src="./Images/profile-pic.jpg" alt="Profile Picture">
+               </div>
+               <div class="profile-info">
+                  <h2>Hello, <span class="name">Carlanee Camoro</span></h2>
+               </div>
+            </div>
+            <div class="search">
+               <input type="text" placeholder="Where do you want to go?">
+               <button class="search-icon"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="actions">
+               <button class="notification-btn"><i class="fa fa-bell"></i></button>
+               <button class="settings-btn"><i class="fa fa-cog"></i></button>
+            </div>
+         </div>
+      </header>
+      <main>
+<aside class="sidebar">
+   <nav>
+      <ul>
+         <li class="sidebar-item active"><i class="fa fa-home"></i><a href="Main Page.html">Home</a></li>
+         <li class="sidebar-item"><i class="fa fa-user"></i><a href="Profile.html">Profile</a></li>
+         <li class="sidebar-item"><i class="fa fa-comments"></i><a href="Chats.html">Chat</a></li>
+         <li class="sidebar-item"><i class="fa fa-calendar"></i><a href="Calendar.html">Calendar</a></li>
+         <li class="sidebar-item"><i class="fa fa-star"></i><a href="#">Saved</a></li>
+      </ul>
+   </nav>
+   <div class="logout">
+      <a href="login.html"><i class="fa fa-sign-out"></i></a>
+   </div>
+</aside>
+		 <article>
+         <section class="main-content">
+			<div class="wrapper">
+  <div class="tabs">
+   
+   <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+      <label for="tab-1" class="tab-label">Most Popular</label>
+      <div class="tab-content"> <h3>Popular</h3>
+	  <div class="popular-image">
+		<img src="./Images/slide1.png" id="modal1">
+		<img src="./Images/slide2.png" id="modal2">
+		<img src="./Images/slide3.png">
+		<img src="./Images/slide4.png">
+		</div>
+	  </div>
+    </div>
+
+
+   <!-- The Modal -->
+   <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01" src="./Images/modal1.png">
+      <div id="caption"></div>
+      <div class="button-container">
+         <div class="date-container">
+            <span style="font-weight: bold;">Date:</span>
+            <span 
+               style="
+                  background-color: lightgray;
+                  padding: 2px;
+                  border-radius: 5px;
+               "
+               >
+               13 Feb - 15 Feb
+            </span>
+         </div>
+         <button id="go-button" class="modal-button">Go</button>
+         <button id="save-button" class="modal-button"><i class="fa fa-save"></i></button>
+         <div class="like-dislike-container">
+            <button class="like-button"><i class="fa fa-thumbs-up"></i></button>
+            <button class="dislike-button"><i class="fa fa-thumbs-down"></i></button>
+         </div>
+      </div>
+   </div> 
+ 
+	
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+      <label for="tab-2" class="tab-label">Bars</label>
+      <div class="tab-content"> <h3>Bar</h3>
+	  <div class="bar-image">
+		<img src="./Images/slide5.png">
+		<img src="./Images/slide6.png">
+		<img src="./Images/slide7.png">
+		<img src="./Images/slide8.png">
+	  </div>
+	  </div>
+	  </div>
+	
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+      <label for="tab-3" class="tab-label">Restaurant</label>
+      <div class="tab-content"> <h3>Restaurants</h3>
+	  <div class="resto-image">
+		<img src="./Images/slide9.png">
+		<img src="./Images/slide10.png">
+		<img src="./Images/slide11.png">
+		<img src="./Images/slide12.png">
+	  </div>
+	  </div>
+	  </div>
+	
+	  <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+      <label for="tab-4" class="tab-label">Resort</label>
+      <div class="tab-content"> <h3>Restaurants</h3>
+	  <div class="resort-image">
+		<img src="./Images/slide13.png">
+		<img src="./Images/slide14.png">
+		<img src="./Images/slide15.png">
+		<img src="./Images/slide16.png">
+	  </div>
+	  </div>
+	  </div>
+
+	  <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
+      <label for="tab-5" class="tab-label">More Activities</label></label>
+      <div class="tab-content"> <h3>More</h3>
+	  <div class="more-image">
+		<img src="./Images/slide17.png">
+		<img src="./Images/slide18.png" id="modal3">
+		<img src="./Images/slide19.png">
+		<img src="./Images/slide20.png">
+	  </div>
+	  </div>
+	  </div>
+	
+  </div>
+</div>
+		 </section>
+      </main>
+   </body>
+</html>

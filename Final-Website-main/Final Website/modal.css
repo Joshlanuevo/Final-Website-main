@@ -1,0 +1,134 @@
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 3rem; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+  
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-height: 100px;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+    height: 150px;
+    overflow: auto;
+}
+  
+/* Close Button */
+.close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: #f1f1f1;
+    font-size: 3rem;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-container {
+    position: absolute;
+    top: 70%;
+    right: 20%;
+    transform: translate(-50%, -50%);
+}
+
+#go-button {
+    background-color: #3B6978;
+    color: #fff;
+    padding: 8px 50px;
+    border-radius: 20px;
+}
+  
+#save-button {
+    background-color: #3B6978;
+    border-radius: 50%;
+    color: #fff;
+    margin-left: 1rem;
+}
+
+/* Font Awesome icons */
+.fa-save {
+    font-size: 16px;
+}
+
+.like-dislike-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: -2.3in;
+    left: 40%;
+    transform: translate(-50%, 0%);
+}
+  
+.like-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #3B6978;
+    padding: 20px;
+    margin: 5px 0px 0px 80px;
+    cursor: pointer;
+}
+.dislike-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #3B6978;
+    padding: 20px;
+    margin: 5px 0px 0px 0px;
+    cursor: pointer;
+}
+  
+.like-button:hover{
+    color: blue;
+}
+.dislike-button:hover {
+    color: #f00;
+}
+
+.date-container {
+    position: absolute;
+    top: 70%;
+    left: -250%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 1rem;
+}

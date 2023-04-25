@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Barkadago - Profile</title>
+      <link rel="stylesheet" type="text/css" href="chatstyle.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   </head>
+   <body>
+      <header>
+         <div class="header">
+            <div class="logo">      
+               <img src="./Images/logo.png" alt="Logo">
+            </div>
+            <div class="profile">        
+               <div class="profile-pic">
+                  <img src="./Images/profile-pic.jpg" alt="Profile Picture">
+               </div>
+               <div class="profile-info">
+                  <h2>Hello, <span class="name">Carlanee Camoro</span></h2>
+               </div>
+            </div>
+            <div class="search">
+               <input type="text" placeholder="Where do you want to go?">
+               <button class="search-icon"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="actions">
+               <button class="notification-btn"><i class="fa fa-bell"></i></button>
+               <button class="settings-btn"><i class="fa fa-cog"></i></button>
+            </div>
+         </div>
+      </header>
+      <main>
+        <aside class="sidebar">
+           <nav>
+              <ul>
+                 <li class="sidebar-item"><i class="fa fa-home"></i><a href="Main Page.html">Home</a></li>
+                 <li class="sidebar-item"><i class="fa fa-user"></i><a href="Profile.html">Profile</a></li>
+                 <li class="sidebar-item active"><i class="fa fa-comments"></i><a href="Chats.html">Chat</a></li>
+                 <li class="sidebar-item"><i class="fa fa-calendar"></i><a href="Calendar.html">Calendar</a></li>
+                 <li class="sidebar-item"><i class="fa fa-star"></i><a href="Saved.html">Saved</a></li>
+              </ul>
+           </nav>
+           <div class="logout">
+              <a href="login.html"><i class="fa fa-sign-out"></i></a>
+           </div>
+        </aside>
+        <article>
+           <section class="main-content">
+              <div class="wrapper">
+			  
+                 <div class="tabs">
+                    <div class="tab">
+                       <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                       <label for="tab-1" class="tab-label">Messages</label>
+                       <div class="tab-content">
+                          <div class="Chat-tab">
+                             <div id="chat-messages"></div>
+                             <div class="card-container">
+                                <div class="card-header">
+                                   <div class="img-avatar"> <img src="./Images/toge.jpg"></div>
+                                   <div class="text-chat">Toge Inumaki</div>
+                                </div>
+                                <div class="card-body">
+                                   <div class="messages-container">
+                                      <div id="messages"></div>
+    </div>
+    <div class="message-input">
+      <form>
+        <textarea id="messageInput" placeholder="Type your message here" class="message-send"></textarea>
+        <button id="sendButton" type="submit" class="button-send">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</div>
+	  
+		</div>
+	  </div>
+	
+    <div class="tab">
+      <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+      <label for="tab-2" class="tab-label">Friends</label>
+      <div class="tab-content">
+<div class="online-tab"> <h2>Online</h2>
+  <a href="Mess1.html"><img src="./Images/online1.png"></a>
+  <a href="Mess2.html"><img src="./Images/online2.png"></a>
+  <a href="page3.html"><img src="./Images/online3.png"></a>
+  <h2>Away</h2>
+  <a href="page4.html"><img src="./Images/away1.png"></a>
+  <a href="Mess3.html"><img src="./Images/away2.png"></a>
+</div>
+
+	  </div>
+	  </div>
+	  </div>
+	  
+	  <script>
+const messageInput = document.getElementById("messageInput");
+const sendButton = document.getElementById("sendButton");
+const messagesContainer = document.getElementById("messages");
+
+function sendMessage() {
+  const message = messageInput.value;
+  if (message.trim() !== "") {
+    const messageWrapper = document.createElement("div");
+    messageWrapper.classList.add("message-wrapper");
+    const messageBox = document.createElement("div");
+    messageBox.classList.add("message-box", "right");
+    const messageText = document.createElement("p");
+    messageText.textContent = message;
+    messageBox.appendChild(messageText);
+    messageWrapper.appendChild(messageBox);
+    messagesContainer.appendChild(messageWrapper); // append to the end of the container
+    messageInput.value = "";
+  }
+}
+
+sendButton.addEventListener("click", (event) => {
+  event.preventDefault();
+  sendMessage();
+});
+</script>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Barkadago - Profile</title>
+      <link rel="stylesheet" type="text/css" href="profilestyle.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   </head>
+   <body>
+      <header>
+         <div class="header">
+            <div class="logo">      
+               <img src="./Images/logo.png" alt="Logo">
+            </div>
+            <div class="profile">        
+               <div class="profile-pic">
+                  <img src="./Images/profile-pic.jpg" alt="Profile Picture">
+               </div>
+               <div class="profile-info">
+                  <h2>Hello, <span class="name">Carlanee Camoro</span></h2>
+               </div>
+            </div>
+            <div class="search">
+               <input type="text" placeholder="Where do you want to go?">
+               <button class="search-icon"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="actions">
+               <button class="notification-btn"><i class="fa fa-bell"></i></button>
+               <button class="settings-btn"><i class="fa fa-cog"></i></button>
+            </div>
+         </div>
+      </header>
+      <main>
+<aside class="sidebar">
+   <nav>
+      <ul>
+         <li class="sidebar-item"><i class="fa fa-home"></i><a href="Main Page.html">Home</a></li>
+         <li class="sidebar-item active"><i class="fa fa-user"></i><a href="Profile.html">Profile</a></li>
+         <li class="sidebar-item"><i class="fa fa-comments"></i><a href="Chats.html">Chat</a></li>
+         <li class="sidebar-item"><i class="fa fa-calendar"></i><a href="Calendar.html">Calendar</a></li>
+         <li class="sidebar-item"><i class="fa fa-star"></i><a href="Saved.html">Saved</a></li>
+      </ul>
+   </nav>
+   <div class="logout">
+      <a href="login.html"><i class="fa fa-sign-out"></i></a>
+   </div>
+</aside>
+		 <article>
+<section class="main-content">
+<div class="profile-information">
+  <div class="profile-picture">
+    <label for="profile-pic-input">
+      <img id="profile-pic" src="https://via.placeholder.com/150" alt="Profile picture">
+    </label>
+    <input type="file" id="profile-pic-input" name="profile-pic" accept="image/*" style="display: none;">
+  </div>
+  <div class="profile-details">
+    <h2>Profile Information</h2>
+    <form id="profile-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="John Doe">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" value="johndoe@example.com">
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" value="1990-01-01">
+      <label for="bio">Bio:</label>
+      <textarea id="bio" name="bio">I'm a software engineer.</textarea>
+      <input type="submit" value="Save" class="save-button">
+    </form>
+  </div>
+</div>
+    <script>
+    const profilePicInput = document.querySelector('#profile-pic-input');
+    const profilePicImg = document.querySelector('.profile-picture img');
+
+    profilePicInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.addEventListener('load', function() {
+          profilePicImg.src = reader.result;
+        });
+        reader.readAsDataURL(file);
+      }
+    });
+	
+	document.querySelector('#profile-form input[type="submit"]').addEventListener('click', function(event) {
+  event.preventDefault(); // prevent the form from being submitted
+
+  // get the form data
+  var formData = {
+    name: document.querySelector('#name').value,
+    email: document.querySelector('#email').value,
+    birthdate: document.querySelector('#birthdate').value,
+    bio: document.querySelector('#bio').value
+  };
+
+  // store the form data in local storage
+  localStorage.setItem('profileData', JSON.stringify(formData));
+});
+
+function populateForm() {
+  // get the stored form data
+  var storedData = localStorage.getItem('profileData');
+
+  // if there is stored data, populate the form fields with it
+  if (storedData) {
+    storedData = JSON.parse(storedData);
+
+    document.querySelector('#name').value = storedData.name;
+    document.querySelector('#email').value = storedData.email;
+    document.querySelector('#birthdate').value = storedData.birthdate;
+    document.querySelector('#bio').value = storedData.bio;
+  }
+}
+
+// call the populateForm function when the page is loaded
+populateForm();
+
+// check if the image exists in local storage and set it as the source of the image element
+if (localStorage.getItem('profilePic')) {
+  document.getElementById('profile-pic').setAttribute('src', localStorage.getItem('profilePic'));
+}
+
+// add event listener to the file input
+document.getElementById('profile-pic-input').addEventListener('change', function(event) {
+  // create a FileReader to read the image file
+  const reader = new FileReader();
+  reader.onload = function() {
+    // set the source of the image element to the data URL of the image
+    document.getElementById('profile-pic').setAttribute('src', reader.result);
+    // store the data URL of the image in local storage
+    localStorage.setItem('profilePic', reader.result);
+  }
+  // read the image file as a data URL
+  reader.readAsDataURL(event.target.files[0]);
+});
+
+  </script>
+</section>
+</section>
+
